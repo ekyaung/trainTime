@@ -48,7 +48,16 @@
 			nextArrival: arrival
 		});
 	});
+
+	database.ref().on("child_added", function(snapshot){
+	$("#train-time-display").html(snapshot.val().time);
+	$("#train-destination").html(snapshot.val().destination);
+	$("#train-frequency").html(snapshot.val().frequency)
 	
+	}, function(errorObject){
+		console.log("errors handled: " + errorObject.code);
+	});
+
 	var timeConverted = moment(initialTime, "hh:mm").subtract(1, "years");
 	console.log(timeConverted);
 

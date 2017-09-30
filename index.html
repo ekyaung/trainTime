@@ -7,13 +7,6 @@
 
 		<!-- adding firebase reference -->
 		<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
-
-		<!-- added moment JS -->
-		 <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-		<script src="javascript/javascript.js"></script>
-		
-		<!-- javascript tag -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	</head>
 	<body>
 		
@@ -28,15 +21,16 @@
 		<div class="panel-heading">
 			<h3>Current Train Time</h3>
 		</div>
-			<div class="panel-body">
-				<form role="form">
-				<div class="form-group">
-				<label for="destination-heading">Destination</label>
-					<div class="destination">
-					destination location 
-					</div>
+			<div class="panel-body" id="train-time">
+				<h2 id="train-time-display">Train Name: </h2>
+				<h2 id="train-destination">Train Destination: </h2>
+				<h2 id="train-frequency">Frequency</h2>
+				<h2 id="train-arrival"></h2>
+				<h2 id="minutes-away">Minutes Away</h2>
+			
+	
 				</div>
-	</form>
+
 	</div>
 	</div>
 	
@@ -70,6 +64,13 @@
 		<button type="submit" class="btn btn-defualt" value="submit" id="add-data">Submit</button>
 		<button type="button" class="btn btn-default" value="clear" id="clearAll">Clear All</button>
 
+
+<!-- javascript tag -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- added moment JS -->
+<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+		
+<script src="javascript/javascript.js"></script>
 
 <span class="subtitle footer text-center"><h6>Eileen K.</h6></span>
 
