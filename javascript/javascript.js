@@ -1,4 +1,4 @@
-console.log("hello");
+// console.log("hello");
 
  var config = {
     apiKey: "AIzaSyAwqvvoU5Wb18B2OsTKTrYKeQbQDu8B8bk",
@@ -9,33 +9,51 @@ console.log("hello");
     messagingSenderId: "144705799120"
   };
 
-  firebase.initalizeApp(config);
+  firebase.initializeApp(config);
 
   var database = firebase.database();
   var connections = database.ref("/connections");
-  var connected = database.ref(".info/connected");
+  var connected = database.ref("/info/connected");
 
-  connectedRef.on("train", function(pop){
+  connected.on("value", function(pop){
   	if(pop.val()){
-  		var con = connectionsRef.push(true);
+  		var con = connected.push(true);
   		con.onDisconnect().remove();
   	}
   });
 
-  connectionsRef.on("train", function(pop){
+  connected.on("child_added", function(pop){
   	console.log(pop);
 
-  	$("#watchers").html(pop.numChildren());
+  	$(".current-time").html(pop.numChildren());
   });
 
   //initial times
 	var initialTime = "12:00 PM";
 	var initialDestination = "San Francisco";
 	var tFrequency = 2;
-	var nextArrival;
+	var nextArrival = "02:00 PM";
 
-	var timeConverted = moment(initialTime, "hh:mm").subtact(1, "years");
+	$("#add-data").on("click", function(){
+	
+		initialTime = $("#train-name").val().trim();
+		iitialDestination = $("#add-train-time").val().trim();
+		tFrequency = $("#add-frequency").val().trim();
+		nextArrival = $("#input-train-time").val().trim();
+
+		database.ref().set({
+			initialTime: time,
+			initialDestination: destination,
+			tFrequency: frequency,
+			nextArrival: arrival
+		});
+	});
+	
+	var timeConverted = moment(initialTime, "hh:mm").subtract(1, "years");
 	console.log(timeConverted);
 
 	var currentTime = moment();
 	console.log("Current time: " + moment(currentTime).format("hh:mm"));
+
+
+	
