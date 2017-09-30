@@ -1,0 +1,73 @@
+<html>
+	<head>
+		<title>Time Sheet Assignment</title>
+		<link src="assets/style.css">
+		<!-- <link src="assets/reset.css"> -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> 
+		<script src="javascript/javascript.js"></script>
+
+	</head>
+	<body>
+		
+	
+	 <div class="jumbotron header">
+		<h1 class="text-center"><strong>Time Sheet</strong></h1>
+		<h2 class="text-center"><strong>Updated time and dates</strong></h2>
+	</div>
+	
+	<!-- This area will display the current train times -->
+	<div class="panel panel-primary current-time">
+		<div class="panel-heading">
+			<h3>Current Train Time</h3>
+		</div>
+			<div class="panel-body">
+				<form role="form">
+				<div class="form-group">
+				<label for="destination-heading">Destination</label>
+					<div class="destination">
+					destination location 
+					</div>
+				</div>
+	</form>
+	</div>
+	</div>
+	
+	<!-- This area will add the new train times -->
+	<div class="panel panel-primary add-time">
+		<div class="panel-heading">
+			<h3>Add Train Time</h3>
+		</div>
+	<div class="panel-body">
+	
+	<form role="form">
+		<div class="form-group">
+			<label for="add-train">Train Name:</label>
+			<input type="text" class="form-control" id="train-name">
+		</div>
+
+		<div class="form-group">
+			<label for="add-destination">Add Destination:</label>
+			<input type="text" class="form-control" id="input-destination">
+		</div>
+
+		<div class="form-group">
+			<label for="train-time-add">Add First Train Time in format:(HH:MM - military time)</label>
+			<input type="text" class="form-control" id="add-train-time">
+		</div>
+
+		<div class="form-group">
+			<label for="frequency">Frequency of Train Arrival</label>
+			<input type="text" class="form-control" id="add-frequency">
+		</div> 
+		<button type="submit" class="btn btn-defualt" value="submit" id="add-data">Submit</button>
+		<button type="button" class="btn btn-default" value="clear" id="clearAll">Clear All</button>
+
+
+<span class="subtitle footer text-center"><h6>Eileen K.</h6></span>
+
+	</form>
+	</div>
+	</div>
+	</body>
+</html>
